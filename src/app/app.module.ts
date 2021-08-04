@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClientesService } from './clientes/clientes.service';
 import { RouterModule, Routes } from '@angular/router';
+import { FormComponent } from './clientes/form/form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes=[
 {path:"",redirectTo:"/clientes",pathMatch:"full"},
@@ -20,10 +22,11 @@ const routes:Routes=[
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ClientesComponent
+    ClientesComponent,
+    FormComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule,RouterModule.forRoot(routes)
+    BrowserModule,HttpClientModule,FormsModule, RouterModule.forRoot(routes)
   ],
   providers: [ClientesService],
   bootstrap: [AppComponent]
